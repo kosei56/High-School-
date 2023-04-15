@@ -1,0 +1,14 @@
+.button {
+}
+
+.list-cell {
+    -fx-cell-size: 40 ;
+    -fx-text-fill: black ;
+}
+
+/*
+.list-view .list-cell {
+    -fx-background-color: #4277f5;
+}
+*/
+

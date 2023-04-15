@@ -1,0 +1,12 @@
+0,  wooden sword,  3,  1,  0,  0
+1,  wooden helmet,  0,  2,  2,  1
+2,  wooden armor,  0,  3,  3,  2
+3,  wooden shield,  0,  2,  4,  1
+0,  bronze sword,  4,  1,  0,  0
+1,  bronze helmet,  0,  0,  0,  0
+2,  bronze armor,  0,  0,  0,  0
+3,  bronze shield,  0,  0,  0,  0
+0,  silver sword,  0,  0,  0,  0
+1,  silver helmet,  0,  0,  0,  0
+2,  silver armor,  0,  0,  0,  0
+3,  silver shield,  0,  0,  0,  0

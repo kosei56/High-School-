@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <TabPane fx:id="tPane" layoutY="-32.0" prefHeight="607.0" prefWidth="731.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane fx:id="aPane1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane fx:id="gPaneBoard" layoutX="68.0" layoutY="62.0" prefHeight="313.0" prefWidth="432.0">
+                          <columnConstraints>
+<!--                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />-->
+                          </columnConstraints>
+                          <rowConstraints>
+<!--                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />-->
+                          </rowConstraints>
+                        </GridPane>
+                        <Button fx:id="btnStart" layoutX="16.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleStart" text="Button" />
+<!--                        <ImageView fx:id="playerIV" fitHeight="25.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" />-->
+                        <GridPane fx:id="gPaneThing" layoutX="78.0" layoutY="72.0" prefHeight="313.0" prefWidth="432.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+              </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane fx:id="tab2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" fill="#2b2b2b" height="450.0" layoutX="68.0" layoutY="62.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+                        <GridPane fx:id="gpMenu" layoutX="116.0" layoutY="408.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="339.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" prefWidth="113.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" prefWidth="113.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" prefWidth="113.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleAttack" prefHeight="45" prefWidth="113" text="Attack" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                              <Button mnemonicParsing="false" onAction="#handleSpell" prefHeight="45" prefWidth="113" text="Spell" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                              <Button mnemonicParsing="false" onAction="#handleItems" prefHeight="45" prefWidth="113" text="Items" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                              <Button mnemonicParsing="false" onAction="#handleDefend" prefHeight="45" prefWidth="113" text="Defend" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handleRun" prefHeight="45" prefWidth="113" text="Run" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handleBack" prefHeight="45" prefWidth="113" text="Back" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" layoutX="202.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" width="183.0" />
+                        <ImageView fx:id="enemyIV" fitHeight="138.0" fitWidth="149.0" layoutX="230.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="70.0" fitWidth="59.0" layoutX="210.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/heroProfile.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="269.0" layoutY="91.0" text="Level :" />
+                        <Label layoutX="269.0" layoutY="115.0" text="HP    : " />
+                        <Label layoutX="267.0" layoutY="138.0" text="MP    : " />
+                        <Label fx:id="lblLevel" layoutX="304.0" layoutY="91.0" text="1" />
+                        <Label fx:id="lblHP" layoutX="304.0" layoutY="115.0" text="20" />
+                        <Label fx:id="lblMP" layoutX="305.0" layoutY="138.0" text="5" />
+                        <TextArea fx:id="desTA" editable="false" layoutX="95.0" layoutY="318.0" prefHeight="80.0" prefWidth="398.0" wrapText="true" />
+                        <ListView fx:id="listLV" layoutX="117.0" layoutY="408.0" onMouseClicked="#handleItemUse" prefHeight="91.0" prefWidth="225.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Untitled Tab3">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                         <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="#2b2b2b" height="450.0" layoutX="68.0" layoutY="62.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+                        <Label layoutX="218.0" layoutY="195.0" text="Game Over" textFill="WHITE">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  
+
+
+              </content>
+            </Tab>
+            <Tab text="Untitled Tab4">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <Rectangle fx:id="rect4" arcHeight="5.0" arcWidth="5.0" fill="#4277f5" height="450.0" layoutX="68.0" layoutY="62.0" stroke="BLACK" strokeType="INSIDE" width="450.0" />
+                        <ImageView fitHeight="125.0" fitWidth="122.0" layoutX="77.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/heroProfile.png" />
+                           </image>
+                        </ImageView>
+                        <ListView fx:id="lstStatsDisplay" layoutX="93.0" layoutY="180.0" prefHeight="205.0" prefWidth="157.0" />
+                        <Button layoutX="421.0" layoutY="448.0" mnemonicParsing="false" onAction="#handleBackMap" prefHeight="45.0" prefWidth="90.0" text="Back" />
+                        <ListView fx:id="lstViewPort" disable="true" layoutX="93.0" layoutY="392.0" onMouseClicked="#handleViewPort" prefHeight="104.0" prefWidth="323.0" />
+                        <ListView fx:id="lstEquippedWeapons" layoutX="266.0" layoutY="180.0" onMouseClicked="#handleEquipLst" prefHeight="205.0" prefWidth="228.0" />
+                        <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="273.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/swordPic.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="273.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/helmetPic.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="273.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/armorPic.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="273.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/shieldPic.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnEquip" disable="true" layoutX="421.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleEquip" prefHeight="45.0" prefWidth="90.0" text="Equip" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
